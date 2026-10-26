@@ -1,1 +1,93 @@
-<h1>Sync</h1>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>DnD Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- СТАРТОВЫЙ ЭКРАН -->
+    <div id="start-screen" class="screen active">
+        <div class="menu-container">
+            <h1>Выберите роль в игре</h1>
+            <div class="button-column">
+                <button id="btn-master" class="menu-btn">Я Мастер</button>
+                <button id="btn-player" class="menu-btn">Я Игрок</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ЭКРАН МАСТЕРА -->
+    <div id="master-screen" class="screen">
+        <h2>Панель Мастера (DM)</h2>
+        <p>Здесь будут карточки всех игроков...</p>
+        <button class="back-btn">Выйти в меню</button>
+    </div>
+
+    <!-- ЭКРАН ИГРОКА -->
+    <div id="player-screen" class="screen">
+        <!-- Под-экран: Выбор действия -->
+        <div id="player-hub" class="sub-screen active">
+            <h2>Лист Персонажа</h2>
+            <div class="button-column">
+                <button id="btn-create-char" class="menu-btn">Создать персонажа</button>
+                <button id="btn-load-char" class="menu-btn">Загрузить персонажа</button>
+            </div>
+            <button class="back-btn">Выйти в меню</button>
+        </div>
+
+        <!-- Под-экран: Создание персонажа -->
+        <div id="player-create" class="sub-screen">
+            <h2>Новый персонаж</h2>
+            <div class="form-container">
+                <div class="form-group">
+                    <label>Имя персонажа:</label>
+                    <input type="text" id="char-name" placeholder="Например: Тордин">
+                </div>
+                <div class="form-group">
+                    <label>Класс и Уровень:</label>
+                    <input type="text" id="char-class" placeholder="Воин 1">
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-box"><label>СИЛ</label><input type="number" id="stat-str" value="10"></div>
+                    <div class="stat-box"><label>ЛОВ</label><input type="number" id="stat-dex" value="10"></div>
+                    <div class="stat-box"><label>ТЕЛ</label><input type="number" id="stat-con" value="10"></div>
+                    <div class="stat-box"><label>ИНТ</label><input type="number" id="stat-int" value="10"></div>
+                    <div class="stat-box"><label>МУД</label><input type="number" id="stat-wis" value="10"></div>
+                    <div class="stat-box"><label>ХАР</label><input type="number" id="stat-cha" value="10"></div>
+                </div>
+                <button id="btn-save-char" class="menu-btn">Сохранить на Рабочий стол</button>
+            </div>
+            <button id="btn-back-to-hub" class="back-btn">Назад</button>
+        </div>
+
+        <!-- Под-экран: Просмотр загруженного персонажа -->
+        <div id="player-view" class="sub-screen">
+            <h2 id="view-char-name">Имя Персонажа</h2>
+            <h3 id="view-char-class">Класс и Уровень</h3>
+            
+            <div class="stats-display-grid">
+                <div class="stat-display-box"><span class="stat-label">СИЛ</span><span id="display-str">10</span></div>
+                <div class="stat-display-box"><span class="stat-label">ЛОВ</span><span id="display-dex">10</span></div>
+                <div class="stat-display-box"><span class="stat-label">ТЕЛ</span><span id="display-con">10</span></div>
+                <div class="stat-display-box"><span class="stat-label">ИНТ</span><span id="display-int">10</span></div>
+                <div class="stat-display-box"><span class="stat-label">МУД</span><span id="display-wis">10</span></div>
+                <div class="stat-display-box"><span class="stat-label">ХАР</span><span id="display-cha">10</span></div>
+            </div>
+
+            <!-- Зона для будущих карт способностей -->
+            <div class="cards-section">
+                <h3>Карты способностей и заклинаний</h3>
+                <div id="player-cards-container" class="cards-container">
+                    <p class="empty-cards-text">Колода пуста. Мастер еще не добавил вам карточек.</p>
+                </div>
+            </div>
+
+            <button id="btn-unload-char" class="back-btn">Закрыть персонажа</button>
+        </div>
+    </div>
+
+    <script src="ui.js"></script>
+</body>
+</html>

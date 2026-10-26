@@ -1,0 +1,15 @@
+{
+  "name": "dnd-cards",
+  "version": "1.0.0",
+  "description": "A desktop app that will help you manage DnD spells and skills as a master or a player",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "31.0.0"
+  }
+}
